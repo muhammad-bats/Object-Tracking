@@ -8,7 +8,7 @@ if __name__ == "__main__" :
         sys.exit(1)
 
     count = 0
-    for count in range(15):
+    for count in range(30):
         count += 1
     
     ok, frame = video.read()
@@ -19,11 +19,21 @@ if __name__ == "__main__" :
     box = cv2.selectROI(frame, False)
 
     tracker_list = ['BOOSTING', 'MIL', 'TLD', 'KCF', 'GOTURN', 'CSRT' ]
-    tracker_type = tracker_list[5]
-    if tracker_type == 'KCF':
+    print(tracker_list)
+    trackerid = input("Enter tracker id ")
+    if trackerid == '0':
+        tracker = cv2.TrackerBoosting_create()
+    elif trackerid == '1':
+        tracker = cv2.TrackerMIL_create()
+    elif trackerid == '2':
+        tracker = cv2.TrackerTLD_create()
+    elif trackerid == '3':
         tracker = cv2.TrackerKCF_create()
-    elif tracker_type == 'CSRT':
+    elif trackerid == 'GOTURN':
+        tracker = cv2.TrackerGOTURN_create()
+    elif trackerid == 'CSRT':
         tracker = cv2.TrackerCSRT_create()
+
     ok = tracker.init(frame, box)
 
     while True:
@@ -31,7 +41,6 @@ if __name__ == "__main__" :
         if not ok:
             print("Failed to grab frame.")
             break
-        print(frame.shape)
         try:
             ok, box = tracker.update(frame)
             if ok:
@@ -53,6 +62,8 @@ if __name__ == "__main__" :
 
         q = cv2.waitKey(1) and 0xff
         if q == 27:
+            video.release()
+            cv2.destroyAllWindows()
             break
 
 video.release()
