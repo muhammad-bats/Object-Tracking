@@ -4,6 +4,7 @@ Object Tracking using cv2 Trackers
 This code uses python-opencv liberary to track objects. The code performs realtime tracking using webcams connected to the system. 
 The code includes a list of different trakcers which can be used. 
 
+## Code Working
 
 User is first prompted to draw a bounding box around the object they want to track, the bounding box is drawn using mouse commands. 
 
