@@ -1,0 +1,14 @@
+For this python script you need these python liberaries
+
+Python version: 3.10.14
+
+numpy                 2.0.1 
+opencv-contrib-python 4.10.0.84
+opencv-python         4.10.0.84
+
+This script uses a conda environment to run the tracker. 
+
+conda version: 24.7.1
+
+To create a conda environment run the following command in anaconda prompt
+conda create --name tracker
