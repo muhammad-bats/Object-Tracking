@@ -118,3 +118,5 @@ if q == 27:
     cv2.destroyAllWindows()
     break
 ```
+
+The `video.release()` and `cv2.DestroyAllWindows` clear any data from the tracking process.
