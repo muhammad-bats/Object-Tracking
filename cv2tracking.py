@@ -7,8 +7,8 @@ if __name__ == "__main__" :
         print("Could not open video")
         sys.exit(1)
 
-    count = 0
-    for count in range(30):
+    count = 0                       #skips first 30 frames, added due to exposure issues in webcam frame when selecting ROI
+    for count in range(30):         #Comment out if you do not face exposure issues or if you are using an external webcam, not the internal webcam with laptop systems.
         count += 1
     
     ok, frame = video.read()
@@ -60,7 +60,7 @@ if __name__ == "__main__" :
 
         cv2.imshow("Tracking", frame)
 
-        q = cv2.waitKey(1) and 0xff
+        q = cv2.waitKey(1) and 0xff     #To end process, press 'esc'key and the tracking process will be automatically stopped and all data cleared. 
         if q == 27:
             video.release()
             cv2.destroyAllWindows()
