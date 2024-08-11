@@ -1,13 +1,13 @@
 You will require the follwong python liberaries:
 
 
-numpy                 2.0.1
+numpy                 2.0.1 `pip install numpy`
 
 
-opencv-contrib-python 4.10.0.84
+opencv-contrib-python 4.10.0.84 `pip install opencv-contrib-python`
 
 
-opencv-python         4.10.0.84
+opencv-python         4.10.0.84 `pip install opencv-python`
 
 
 setuptools            72.1.0
