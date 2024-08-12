@@ -140,3 +140,9 @@ if q == 27:
 ```
 
 The `video.release()` and `cv2.DestroyAllWindows` clear any data from the tracking process.
+
+
+## FLowchart
+
+![trackerflow](https://github.com/user-attachments/assets/aa35fb1f-1e17-4d54-9e89-d55bd6cbe577)
+
